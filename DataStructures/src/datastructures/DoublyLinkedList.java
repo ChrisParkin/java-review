@@ -1,7 +1,5 @@
 package datastructures;
 
-import datastructures.LinkedList.Node;
-
 public class DoublyLinkedList<T>{
 
 	public class Node{
@@ -166,42 +164,5 @@ public class DoublyLinkedList<T>{
 			System.out.println("The list is empty.");
 		}
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		DoublyLinkedList<String> ll = new DoublyLinkedList<>();
-		ll.insert("Christopher");
-		ll.insert("Daniel");
-		ll.insert("Parkin");
-		ll.print(false);
-		ll.print(true);
-		System.out.println("HEAD: " + ll.getHead().getValue());
-		System.out.println("TAIL: " + ll.getTail().getValue());
-		System.out.println("SEARCH Dan: " + ll.search(ll.getHead(), "Dan"));
-		System.out.println("SEARCH Daniel: " + ll.search(ll.getHead(), "Daniel"));
-		System.out.println("--- Delete Daniel ---");
-		ll.delete("Daniel");
-		ll.print(false);
-		ll.print(true);
-		System.out.println("HEAD: " + ll.getHead().getValue());
-		System.out.println("TAIL: " + ll.getTail().getValue());
-		System.out.println("--- Delete Christopher ---");
-		ll.delete("Christopher");
-		ll.print(false);
-		ll.print(true);
-		System.out.println("HEAD: " + ll.getHead().getValue());
-		System.out.println("TAIL: " + ll.getTail().getValue());
-		System.out.println("--- Delete Parkin ---");
-		ll.delete("Parkin");
-		ll.print(false);
-		ll.print(true);
-		Integer[] input = {1,2,3,4,5,6,7,8,9,10};
-		DoublyLinkedList<Integer> dll = new DoublyLinkedList<>(input);
-		dll.print(false);
-		dll.print(true);
-		dll.delete(5);
-		dll.print(false);
-		dll.print(true);
-	}
-
 }
 

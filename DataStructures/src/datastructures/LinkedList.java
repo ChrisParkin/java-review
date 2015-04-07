@@ -41,20 +41,6 @@ public class LinkedList<T>{
 	private Node tail   = null;
 	private int     length = 0;
 	
-	public LinkedList(T[] initialValues){
-		Node prevNode = null;
-		for(int i=initialValues.length - 1; i > 0; i--){
-			if(prevNode == null){
-				Node tmpNode = new Node(initialValues[i]);
-				tail = tmpNode;
-			}else{
-				Node tmpNode = new Node(initialValues[i], prevNode);
-				prevNode = tmpNode;
-				head = tmpNode;
-			}
-		}
-	}
-	
 	public LinkedList(){
 		// nothing to do
 	}
@@ -136,30 +122,4 @@ public class LinkedList<T>{
 			System.out.println("The list is empty.");
 		}
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		LinkedList<String> ll = new LinkedList<>();
-		ll.insert("Christopher");
-		ll.insert("Daniel");
-		ll.insert("Parkin");
-		ll.print();
-		System.out.println("HEAD: " + ll.getHead().getValue());
-		System.out.println("TAIL: " + ll.getTail().getValue());
-		System.out.println("SEARCH Dan: " + ll.search(ll.getHead(), "Dan"));
-		System.out.println("SEARCH Daniel: " + ll.search(ll.getHead(), "Daniel"));
-		System.out.println("--- Delete Daniel ---");
-		ll.delete("Daniel");
-		ll.print();
-		System.out.println("HEAD: " + ll.getHead().getValue());
-		System.out.println("TAIL: " + ll.getTail().getValue());
-		System.out.println("--- Delete Christopher ---");
-		ll.delete("Christopher");
-		ll.print();
-		System.out.println("HEAD: " + ll.getHead().getValue());
-		System.out.println("TAIL: " + ll.getTail().getValue());
-		System.out.println("--- Delete Parkin ---");
-		ll.delete("Parkin");
-		ll.print();
-	}
-
 }
