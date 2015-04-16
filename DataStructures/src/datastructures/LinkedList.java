@@ -2,6 +2,19 @@ package datastructures;
 
 public class LinkedList<T>{
 
+	public static void main(String[] args){
+		LinkedList<String> ll = new LinkedList<>();
+		ll.insert("Hello");
+		ll.insert("World");
+		ll.insert("How's");
+		ll.insert("it");
+		ll.insert("going?");
+		ll.print();
+		ll.reverse();
+		ll.print();
+		ll.reverseRecursive();
+		ll.print();
+	}
 	public class Node{
 		private Node next;
 		private T value;
@@ -105,6 +118,55 @@ public class LinkedList<T>{
 	
 	public Node getTail(){
 		return tail;
+	}
+	
+	public int getLength(){
+		return length;
+	}
+	
+	public void reverse(){
+		Node prev = null;
+		Node curr = null;
+		Node next = null;
+		
+		for(int i = 0; i < getLength(); i++){
+			if(i == 0){
+				curr = head.getNext();
+				tail = head;
+				tail.setNext(null);
+				prev = tail;
+			}else{
+				if(i == length - 1){
+					head = curr;
+					curr.setNext(prev);
+				}else{
+					next = curr.getNext();
+					curr.setNext(prev);
+					prev = curr;
+					curr = next;
+				}
+			}	
+		}
+	}
+	
+	public void reverseRecursive(Node... nodes){
+		
+		if(nodes.length == 0){
+			tail = head;
+			reverseRecursive(tail, tail.getNext());
+			tail.setNext(null);
+		}else{
+			Node n = nodes[0];
+			Node p = nodes[1];
+			Node next;
+			if(p == null){
+				head = n;
+			}else{
+				next = p.getNext();
+				p.setNext(n);
+				reverseRecursive(p, next);
+			}
+		}
 	}
 	
 	public void print(){
