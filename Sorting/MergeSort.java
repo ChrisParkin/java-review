@@ -43,8 +43,11 @@ public class MergeSort {
 	}
 	
 	public static void main(String[] args){
+		long starttime = System.currentTimeMillis();
 		char[] myname = "HEREISMYAMAZINGSTRING".toCharArray();
 		mergesort(myname,0, myname.length - 1);
 		System.out.println(Arrays.toString(myname));
+		long endtime = System.currentTimeMillis();
+		System.out.println("Time: " + (endtime - starttime) + " milliseconds");
 	}
 }
